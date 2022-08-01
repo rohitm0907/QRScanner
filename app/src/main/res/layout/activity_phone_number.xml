@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_app"
+    tools:context=".activities.PhoneNumberActivity">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/imgUser"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_user"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_mobile"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/txtEnterNumber"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/imgUser"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rlPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEnterNumber"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <EditText
+            android:id="@+id/edtPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:maxLength="10"
+            android:background="@drawable/bg_edttext"
+            android:hint="@string/mobile"
+            android:inputType="number"
+            android:paddingVertical="16dp"
+            android:paddingStart="120dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/color_text" />
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20sp"
+            app:ccp_contentColor="@color/color_text"
+            app:ccp_defaultPhoneCode="91"
+            app:ccp_showFullName="false"
+            app:ccp_showNameCode="false" />
+    </RelativeLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnNext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rlPhone"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:paddingHorizontal="70dp"
+        android:paddingVertical="15dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_button"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
